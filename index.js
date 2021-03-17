@@ -10,9 +10,9 @@ document.getElementById("check").addEventListener('click',()=>{
         console.log(city);
         console.log()
         let {name:cityname}=fetch(url).then((value)=>{
-            console.log(value);
-            return value;
-        })
+            // console.log(value.json());
+            return value.json();
+        }).then((data)=>console.log(data));
         console.log(cityname);
     
 });
