@@ -1,0 +1,29 @@
+ body{
+    background-color: aqua;
+} 
+h3{
+    text-align: center;
+}
+
+input{
+    height: 25px;
+}
+#check{
+    height: 30px;
+    width: 100px;
+    display: block;
+    border-radius: 30px;
+    margin: 0 auto;
+    background-color: blueviolet;
+    color: aliceblue;
+}
+#check
+ .api{
+    display: block;
+    margin: 0 auto;
+    
+} 
+.chart{
+    display: block;
+    margin: 0 auto;
+}
