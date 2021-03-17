@@ -6,7 +6,7 @@
 const apikey="3977b79152cb13318f3af71da941648e";
 document.getElementById("check").addEventListener('click',()=>{
         let city=document.getElementById("city").value;
-        let url="http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey;
+        let url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey;
         console.log(city);
         console.log()
         let {name:cityname}=fetch(url).then((value)=>{
