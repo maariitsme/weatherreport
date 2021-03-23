@@ -5,14 +5,26 @@
 //api.openweathermap.org/data/2.5/weather?q={city name}&appid=e58df82a2e41b81975178a27f21319bc
 const apikey="3977b79152cb13318f3af71da941648e";
 document.getElementById("check").addEventListener('click',()=>{
-        let city=document.getElementById("city").value;
-        let url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey;
-        console.log(city);
-        console.log()
-        let {name:cityname}=fetch(url).then((value)=>{
-            // console.log(value.json());
-            return value.json();
-        }).then((data)=>console.log(data));
+    
+       let details= getApi();
+        console.log(details);
+        let {name:cityname}=details;
         console.log(cityname);
     
 });
+async function  getApi(){
+    let city=document.getElementById("city").value;
+    let url="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey;
+    // console.log(city);
+    let details;
+     await  fetch(url).then((value)=>{
+        // console.log(value.json());
+        return value.json();
+    }).catch(()=>{
+        console.log("cannot fetch details Check your Internet Connection");
+    }).then((data)=>{
+       details=data;
+       return data
+    });
+    return details;
+}
